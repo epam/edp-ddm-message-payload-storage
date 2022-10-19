@@ -6,7 +6,7 @@
 
     <groupId>com.epam.digital.data.platform</groupId>
     <artifactId>ddm-message-payload</artifactId>
-    <version>1.7.0</version>
+    <version>1.8.0</version>
 
     <name>ddm-message-payload</name>
 
@@ -21,53 +21,72 @@
         <mockito.version>4.1.0</mockito.version>
         <assertj.version>3.21.0</assertj.version>
         <junit5.version>5.8.1</junit5.version>
+        <spring-data-redis.version>2.7.0</spring-data-redis.version>
+        <lettuce.version>6.1.8.RELEASE</lettuce.version>
+        <guava.version>31.1-jre</guava.version>
 
         <sonar.coverage.exclusions>
-            **/dto/**/*,
-            **/config/**/*,
-            **/factory/**/*
+          **/dto/**/*,
+          **/config/**/*,
+          **/factory/**/*,
+          **/model/**/*
         </sonar.coverage.exclusions>
-    </properties>
-    <dependencies>
+      </properties>
+      <dependencies>
         <dependency>
-            <groupId>com.epam.digital.data.platform</groupId>
-            <artifactId>ddm-ceph-client</artifactId>
-            <version>${ddm-ceph-client.version}</version>
+          <groupId>com.epam.digital.data.platform</groupId>
+          <artifactId>ddm-ceph-client</artifactId>
+          <version>${ddm-ceph-client.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <optional>true</optional>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>${lombok.version}</version>
+          <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit5.version}</version>
-            <scope>test</scope>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>${junit5.version}</version>
+          <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>${mockito.version}</version>
+          <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
-            <scope>test</scope>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>${assertj.version}</version>
+          <scope>test</scope>
         </dependency>
-    </dependencies>
+        <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-redis</artifactId>
+          <version>${spring-data-redis.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>io.lettuce</groupId>
+          <artifactId>lettuce-core</artifactId>
+          <version>${lettuce.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>${guava.version}</version>
+        </dependency>
+      </dependencies>
 
-    <build>
+      <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.plugin.version}</version>
-            </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven.surefire.plugin.version}</version>
+          </plugin>
         </plugins>
-    </build>
+      </build>
 
 </project>
