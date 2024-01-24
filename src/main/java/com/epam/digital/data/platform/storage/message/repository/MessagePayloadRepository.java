@@ -18,8 +18,7 @@
 package com.epam.digital.data.platform.storage.message.repository;
 
 import com.epam.digital.data.platform.storage.message.dto.MessagePayloadDto;
-import org.springframework.cloud.sleuth.annotation.NewSpan;
-
+import io.micrometer.tracing.annotation.NewSpan;
 import java.util.Optional;
 
 /**
@@ -42,8 +41,8 @@ public interface MessagePayloadRepository {
    * @param key document id
    * @return {@link MessagePayloadDto} content representation (optional)
    *
-   * @throws IllegalArgumentException            if stored content couldn't be parsed to {@link
-   *                                             MessagePayloadDto}
+   * @throws IllegalArgumentException if stored content couldn't be parsed to
+   *                                  {@link MessagePayloadDto}
    */
   @NewSpan
   Optional<MessagePayloadDto> getMessagePayload(String key);
